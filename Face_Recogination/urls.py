@@ -5,9 +5,9 @@ urlpatterns=[
     path("check/",check,name="check"),
     path("save/",save,name="save"),
     path("dashboard/",index,name="index"),
+    path("logout/",logout,name="logout"),
     path("train/",train,name="train"),
     path("test/",test,name="test"),
-    path("setting/",setting,name="setting"),
     path("rename/",rename,name="rename"),
     path("recognize_faces/",recognize_faces,name="recognize_faces")
 

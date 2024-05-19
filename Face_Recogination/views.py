@@ -1,11 +1,22 @@
 from django.shortcuts import render,redirect
 from django.http import request,HttpResponse
 from django.http import JsonResponse
+from django.contrib.auth import logout
+from django.utils.decorators import decorator_from_middleware
+from Group76.middleware import NoCacheMiddleware
 from .main import *
 from .xog import *
 from .models import *
 db.create_user()
 obj=Main()
+
+def logout(request):
+    response = redirect('login')
+    response['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
+    response['Pragma'] = 'no-cache'
+    response['Expires'] = '0'
+    return response
+
 # Create your views here.
 def login(request):
     return render(request,"login.html",{"user":""})
