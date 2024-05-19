@@ -4,23 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="login-form">
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form id="signup-form">
             <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
             <div class="camera">
                 <video id="video" width="320" height="240" autoplay></video>
                 <button id="snap">Snap Photo</button>
                 <canvas id="canvas" width="320" height="240"></canvas>
             </div>
             <input type="hidden" name="photo" id="photo">
-            <button type="submit">Login</button>
+            <button type="submit">Signup</button>
         </form>
     </div>
-    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
 </body>
 </html>
